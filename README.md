@@ -169,3 +169,120 @@ else
     done
 fi
 ```
+
+# Ejercicio14
+```sh
+#!/bin/bash
+
+n=$1
+
+for i in $(seq 0 $n);
+do
+    echo $i
+done
+```
+
+# Ejercicio15
+```sh
+#!/bin/bash
+
+if [[ $# -ne 1 ]]
+then
+	echo "Debe de introducir un número por parámetro"
+	exit
+fi
+
+#Comenzamos la suma desde 1
+total=1
+
+#Bucle para sumar hasta el número introducido
+for((i=2; i<=$1; i++))
+do
+  total=$((total + i))
+done
+  
+echo "El resultado de la suma es $total"
+```
+
+# Ejercicio16
+```sh
+#!/bin/bash
+
+var1=$1
+var2=$2
+
+temp=$var1
+var1=$var2
+var2=$temp
+
+echo "El valor del primer parámetro es: $var1"
+echo "El valor del segundo parámetro es: $var2"
+```
+
+# Ejercicio17
+```sh
+#!/bin/bash
+
+echo "Escribe una palabra (q para salir):"
+read palabra
+
+while [ "$palabra" != "q" ]
+do
+    echo "Escrito: $palabra"
+    echo "Escribe otra palabra (q para salir):"
+    read palabra
+done
+echo "Adios!"
+```
+
+# Ejercicio18
+```sh
+#!/bin/bash
+
+while True:
+palabra = input("Introduce una palabra: ")
+if palabra == "q":
+    break
+else:
+    with open("fichero.txt", "a") as fichero:
+        fichero.write(palabra + "\n")
+```
+
+# Ejercicio19
+```sh
+#!/bin/bash
+
+# Script para leer palabras y guardarlas en un fichero de forma ordenada
+
+echo "Introduce palabras (para salir escribe q):"
+
+# Bucle infinito
+while true; do
+    read palabra
+    if [ "$palabra" = "q" ]; then
+        break
+    else
+        # Añadimos la palabra al final del fichero, ordenada alfabeticamente
+        echo "$palabra" >> fichero.txt
+        sort -o fichero.txt fichero.txt
+    fi
+done
+
+echo "Fin del programa."
+```
+
+# Ejercicio20
+```sh
+#!/bin/bash
+
+# Solicitar al usuario un número
+echo "Por favor, introduce un número: "
+read num
+
+# Comprueba si el número está en el archivo números.txt
+if grep -q $num números.txt; then
+  echo "El número $num se encuentra en el archivo números.txt"
+else
+  echo "El número $num no se encuentra en el archivo números.txt"
+fi
+```
