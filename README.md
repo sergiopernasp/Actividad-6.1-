@@ -62,7 +62,7 @@ fi
 #!/bin/bash
 
 if [ $# -ne 3 ]; then
-  echo "Error: Incorrect number of parameters."
+  echo "Error"
 fi
 ```
 # Ejercicio6
