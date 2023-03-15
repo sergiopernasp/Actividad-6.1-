@@ -22,7 +22,7 @@ numero = int(input("Introduce un número entero: "))
 
 # Comprobar si es positivo
 if numero < 0:
-    print("El número es positivo")
+    print("El número es negativo")
 else:
     print("El número no es positivo")
 ```
