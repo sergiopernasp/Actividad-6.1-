@@ -109,12 +109,63 @@ fi
 echo "El resultado de la operación es $result"
 ```
 
-# Ejercicio7
+# Ejercicio8
 ```sh
 #!/bin/bash
 if [ -f $1 ]; then 
   echo "El fichero $1 existe"
 else
   echo "El fichero $1 no existe"
+fi
+```
+
+# Ejercicio9
+```sh
+#!/bin/bash
+
+if [ -d "$1" ]; then
+  echo "$1 es un directorio"
+elif [ -f "$1" ]; then
+  echo "$1 es un fichero"
+else
+  echo "$1 no es ni un directorio ni un fichero"
+fi
+```
+
+# Ejercicio10
+```sh
+#!/bin/bash
+
+`ls -l $1`
+```
+# Ejercicio11
+```sh
+#!/bin/bash
+
+`for i in {1..50}; do echo "Hola"; done`
+```
+
+# Ejercicio12
+```sh
+#!/bin/bash
+
+for i in {1..10}; do
+    read -p "Ingrese una palabra: " palabra
+    
+    echo "La palabra ingresada es: $palabra"
+done
+```
+
+# Ejercicio13
+```sh
+#!/bin/bash
+if [ $# -eq 0 ]
+then
+  echo "No se ha indicado ningún parámetro"
+else
+  for (( i = 0 ; i < $1 ; i++ ))
+    do
+      echo "hola"
+    done
 fi
 ```
